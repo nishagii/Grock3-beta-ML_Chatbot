@@ -1,0 +1,19 @@
+<div style="padding: 20px;">
+  <h1>Grok Study Buddy</h1>
+  <input 
+    [(ngModel)]="prompt" 
+    placeholder="Ask me anything about AI/ML..." 
+    (keyup.enter)="sendPrompt()"
+    style="width: 300px; padding: 5px;"
+  />
+  <button 
+    (click)="sendPrompt()"
+    [disabled]="loading"
+    style="margin-left: 10px; padding: 5px 10px;"
+  >
+    {{ loading ? 'Loading...' : 'Ask' }}
+  </button>
+  <p *ngIf="response" style="margin-top: 20px;">
+    <strong>Response:</strong> {{ response }}
+  </p>
+</div>
